@@ -27,7 +27,7 @@ HELPABLE = {}
 
 async def initiate_bot():
     with console.status(
-        "[magenta] Booting up The Yukki Music Bot...",
+        "[magenta] Booting up The Reyy Music Bot...",
     ) as status:
         console.print("┌ [red]Clearing MongoDB cache...")
         try:
@@ -78,12 +78,12 @@ async def initiate_bot():
         await asyncio.sleep(2.4)
         await startup_delete_last(_____)
     console.print(
-        "[bold green]Congrats!! Yukki Music Bot has started successfully!\n"
+        "[bold green]Congrats!! Reyy Music Bot has started successfully!\n"
     )
     try:
         await app.send_message(
             LOG_GROUP_ID,
-            "<b>Congrats!! Music Bot has started successfully!</b>",
+            "<b>Selamat!! Bot Musik telah dimulai dengan sukses!</b>",
         )
     except Exception as e:
         print(
@@ -93,22 +93,22 @@ async def initiate_bot():
         return
     a = await app.get_chat_member(LOG_GROUP_ID, BOT_ID)
     if a.status != "administrator":
-        print("Promote Bot as Admin in Logger Channel")
+        print("Promosikan Bot sebagai Admin di Saluran Logger")
         console.print(f"\n[red]Stopping Bot")
         return
     try:
         await userbot.send_message(
             LOG_GROUP_ID,
-            "<b>Congrats!! Assistant has started successfully!</b>",
+            "<b>Selamat!! Asisten telah berhasil dimulai!</b>",
         )
     except Exception as e:
         print(
-            "Assistant Account has failed to access the log Channel. Make sure that you have added your bot to your log channel and promoted as admin!"
+            "Akun Asisten gagal mengakses Saluran log. Pastikan Anda telah menambahkan bot Anda ke saluran log Anda dan dipromosikan sebagai admin!"
         )
         console.print(f"\n[red]Stopping Bot")
         return
     try:
-        await userbot.join_chat("OfficialYukki")
+        await userbot.join_chat("ReyMusic")
     except:
         pass
     console.print(f"\n┌[red] Bot Started as {BOT_NAME}!")
@@ -119,11 +119,12 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""Hello ,
-My name is {BOT_NAME}.
-I'm Telegram Voice Chat Audio with some useful features.
+home_text_pm = f"""Haii Brother ,
+Nama Saya 🤙 {BOT_NAME}.
+Saya adalah Bot Telegram Pemutar Musik Di Obrolan Suara.
+sᴀʏᴀ ᴅɪ ᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ @ryinaja
 
-All commands can be used with: / """
+Semua perintah dapat digunakan dengan: / """
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -163,7 +164,7 @@ async def start_command(_, message):
                 reply_markup=keyboard,
             )
         if name[0] == "i":
-            m = await message.reply_text("🔎 Fetching Info!")
+            m = await message.reply_text("🔎 Mengambil Info!")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -193,10 +194,10 @@ async def start_command(_, message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🎥 Watch Youtube Video", url=f"{link}"
+                            text="🎥 Tonton Video Youtube", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔄 Close", callback_data="close"
+                            text="🔄 Kembali", callback_data="close"
                         ),
                     ],
                 ]
@@ -222,9 +223,9 @@ async def help_parser(name, keyboard=None):
     return (
         """Hello {first_name},
 
-Click on the buttons for more information.
+Klik tombol untuk informasi lebih lanjut.
 
-All commands can be used with: /
+Semua perintah dapat digunakan dengan: /
 """.format(
             first_name=name
         ),
@@ -250,7 +251,7 @@ async def help_button(client, query):
 
 Click on the buttons for more information.
 
-All commands can be used with: /
+Semua perintah dapat digunakan dengan: /
  """
     if mod_match:
         module = mod_match.group(1)
@@ -264,10 +265,10 @@ All commands can be used with: /
             [
                 [
                     InlineKeyboardButton(
-                        text="↪️ Back", callback_data="help_back"
+                        text="↪️ kembali", callback_data="help_back"
                     ),
                     InlineKeyboardButton(
-                        text="🔄 Close", callback_data="close"
+                        text="🔄 menutup", callback_data="close"
                     ),
                 ],
             ]
