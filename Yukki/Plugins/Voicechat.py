@@ -18,7 +18,7 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 
 loop = asyncio.get_event_loop()
 
-__MODULE__ = "Join/Leave"
+__MODULE__ = "ᴊᴏɪɴ/ʟᴇᴀᴠᴇ"
 __HELP__ = """
 
 **Note:**
