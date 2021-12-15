@@ -16,7 +16,7 @@ from Yukki.Utilities.youtube import (get_yt_info_query,
 
 loop = asyncio.get_event_loop()
 
-__MODULE__ = "Song"
+__MODULE__ = "sᴏɴɢ"
 __HELP__ = """
 
 
